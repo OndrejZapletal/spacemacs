@@ -73,7 +73,7 @@
       (setq slack-enable-emoji t))
     :config
     (progn
-      (spacemacs/set-leader-keys-for-major-mode 'slack-mode
+      (spacemacs/set-leader-keys-for-major-mode 'slack-message-buffer-mode
         "j" 'slack-channel-select
         "g" 'slack-group-select
         "r" 'slack-select-rooms
@@ -84,7 +84,7 @@
         "q" 'slack-ws-close
         "mm" 'slack-message-embed-mention
         "mc" 'slack-message-embed-channel
-        "k" 'slack-select-rooms
+        "k" 'slack-message-delete
         "@" 'slack-message-embed-mention
         "#" 'slack-message-embed-channel
         ")" 'slack-message-add-reaction
@@ -96,6 +96,6 @@
 (defun slack/pre-init-window-purpose ()
   (spacemacs|use-package-add-hook window-purpose
     :pre-config
-    (add-to-list 'purpose-user-mode-purposes '(slack-mode . chat))))
+    (add-to-list 'purpose-user-mode-purposes '(slack-message-buffer-mode . chat))))
 
 ;;; packages.el ends here
